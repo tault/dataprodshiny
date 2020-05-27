@@ -1,0 +1,43 @@
+Tim's Data Products Final Project
+========================================================
+author: Tim Ault
+date: May 27, 2020
+autosize: true
+
+The Data
+========================================================
+
+I used the USArrests data in the base package of R.
+
+- This has arrest data for murders, assaults, and rapes for each state in the United States.
+- Data is given as arrests per 100,000 citizens.
+- There is also a column that indicates what percentage of that state lives in urban areas.
+
+```{r heady}
+head(USArrests,4)
+```
+
+What This Shiny App Does...
+========================================================
+
+- Provides the range of user-selected crime via boxplot and histogram
+- Allows user to specify which region of the US (West, South, Northeast, Midwest) they'd like to focus on.
+- There is also a column that indicates what percentage of that state lives in urban areas.
+
+Example Histogram
+========================================================
+
+This is just an example. In the app, the value within aes() and the value for bins are user-specified.
+
+```{r histel,fig.width=4,fig.height=3}
+library(ggplot2)
+g<-ggplot(USArrests, aes(Murder))
+g<-g+geom_histogram(color="black",fill="green",bins=6)
+g<-g+ggtitle("Histogram")+labs(x="Number of Crimes per 100,000 people")
+g
+```
+
+Thank you for your time!
+========================================================
+
+Happy grading, and stay safe.
